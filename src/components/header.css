@@ -1,0 +1,17 @@
+
+
+.text-drop{
+    visibility: visible;
+    transform: scale(1);
+    transform:translateY(40px);
+    transition: all 0.5s ease-in-out;
+}
+
+.full-rotate:hover{
+    transform: rotate(270deg);
+    transition: all 1.5s ease-in-out;
+
+}
+.shift-left{
+    transform: translate(-50%, 40px);
+}
