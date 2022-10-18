@@ -16,7 +16,7 @@ useEffect(() => {
  }, 1000)
 }, [])
 return(
-    <div className='border rounded-2 border-primary px-2 h3'>
+    <div className='border-bottom border-2 rounded-pill border-primary px-2 h3 text-white'>
         {time}
     </div>
 )

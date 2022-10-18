@@ -18,10 +18,13 @@ history.goForward();
   }
 
   return (
-    <footer >
-      <button onClick={goBack}>Back</button>
+    <div className="d-flex align-items-end ">
+
+    <footer className=' h-50 bg-dark align-items-center  w-100'>
+      <button className="rounded"  onClick={goBack}>Back</button>
       <div><Clock/></div>
-      <button onClick={goForward}>Forward</button>
+      <button className="rounded" onClick={goForward}>Forward</button>
     </footer>
+    </div>
   );
 }

@@ -1,0 +1,23 @@
+.background{
+    background: url(https://wallpapercrafter.com/sizes/1920x1080/131543-winter-nature-sunrise-snow-trees-landscape-clouds.jpg);
+    position: relative;
+    background-size: cover;
+}
+.fog-anim{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5NEU2YpQJgN03blxevGRQ_QgHGXhiKuRCIg&usqp=CAU);
+    background-size: 200% auto;
+    background-position: 0 bottom;
+    animation: fogAnim 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes fogAnim{
+    0% {background-position: -200% bottom;}
+    100% {background-position: 0% bottom;}
+}

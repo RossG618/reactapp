@@ -20,10 +20,10 @@ export default function Articles () {
 //     $('#myTable').DataTable();
 // } );
   return (
-    <main>
+    <main className='container'>
       <h1>Articles</h1>
       
-      <table className="table table-hover">
+      <table className="table-striped table table-hover ">
         <tbody>
 
        

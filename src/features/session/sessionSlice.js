@@ -11,6 +11,10 @@ export const sessionSlice = createSlice({
       state.user = action.payload;
       state.isLoggedIn = true;
     },
+    logIn: (state, action) => {
+      state.user = action.payload;
+      state.isLoggedIn = true;
+    },
     editUser: (state, action) => {
       state.user = action.payload;
     },
@@ -23,5 +27,5 @@ export const sessionSlice = createSlice({
 
 export const selectCurrentUser = (state) => state.session.user;
 export const selectIsLoggedIn = (state) => state.session.isLoggedIn;
-export const { signUp, logOut, editUser } = sessionSlice.actions;
+export const { signUp, logIn, logOut, editUser } = sessionSlice.actions;
 export default sessionSlice.reducer;

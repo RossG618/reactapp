@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { QuantityInput } from './Counters/counterButtons';
 import { products } from './Products';
 
-
 // const [productItems, setProductItems] = useState([])
 // const [totPrice, setTotPrice] = useState(0);
 //   const [counter, setCounter] = useState(0);
@@ -18,6 +17,7 @@ import { products } from './Products';
   // const reset = () => {
   //     setCounter(0)
   // }
+  const itemsCount = products.length;
   
 export default function Cart(){
     
@@ -33,7 +33,7 @@ export default function Cart(){
     const quantityPrice = totalPrice;
 
     return(
-        <div>
+        <div className='d-flex mt-3'>
            
             {/* <div className="col-md-5 col-lg-4 ">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -82,8 +82,8 @@ export default function Cart(){
           </div>
         </form>
       </div> */}
-      <h1>Cart items</h1>
-      <h2>Overall Price £{quantityPrice} </h2>
+      <div>
+
       {products.map(data => (
         <div key={data.id} className='list-group-item container mb-3'>
           <div className="d-flex shadow-sm border rounded-2">
@@ -103,7 +103,16 @@ export default function Cart(){
           </div>
         </div>
       ))}
-     
+      </div>
+     <div className='card overflow-hidden mx-3 h-25 justify-content-between '>
+      <h2 className='bg-warning px-1'>Cart: {itemsCount} items</h2>
+      
+      <div className='px-4'>
+      <h3>Total £{quantityPrice} </h3>
+      <h5 className='lead'>Total +Vat £{quantityPrice} </h5>
+
+      </div>
+      </div>
         </div>
     )
 }

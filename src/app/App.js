@@ -11,13 +11,14 @@ import Profile from "../components/Profile";
 import Login from "../components/Login"; 
 import Home from './../components/Home';
 import  ColorsAPI  from '../components/colorsAPI';
-
+import Account from "../components/Account";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from './../components/cart';
 import { BMW } from './../components/BMW';
 import { Lamborghini } from "../components/Lamborghini";
+import  About from "../components/About";
 
 export const linkStyles = {
   "text-decoration": "none",
@@ -28,7 +29,7 @@ function App() {
   return (
     <Router>
       <Header />
-     <div className="container d-flex justify-content-center">
+     <div className=" d-flex justify-content-center">
 
    
       <Switch>
@@ -44,6 +45,9 @@ function App() {
           <Route path='/login'>
             <Login  />
           </Route>
+          <Route path='/account'>
+            <Account  />
+          </Route>
           <Route path='/categories'>
             <Categories  />
           </Route>
@@ -55,6 +59,9 @@ function App() {
           </Route>
           <Route path='/profile'>
             <Profile  />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
           <Route path='/colors-api'>
             <ColorsAPI  />
