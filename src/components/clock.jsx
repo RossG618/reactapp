@@ -11,6 +11,7 @@ useEffect(() => {
     const hour = dateObject.getHours();
     const minute = dateObject.getMinutes();
     
+    
     const currentTime = `${hour} : ${minute}`;
     setTime(currentTime)
  }, 1000)

@@ -1,15 +1,15 @@
-import axios from 'axios';
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { linkStyles } from './../app/App';
 import { Comments } from './CommentsArray';
 import FeedBack from './modals/Feedback';
 import './home.css'
-export default function Home() {
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-  const styles = {
-    "width": "80%", "height": "300px", "border-radius": "21px 21px 0 0",
-  }
+export default function Home() {
+  AOS.init();
+  // const styles = {
+  //   "width": "80%", "height": "300px", "border-radius": "21px 21px 0 0",
+  // }
 
 
   const textStyle = {
@@ -30,8 +30,9 @@ export default function Home() {
     const currentDate = `${day}/${month}/${year}`;
     return currentDate;
   }
+ 
   return(
-    <div className=''>
+    <div className='bg-body'>
 
    <div className='container mt-4'>
       <FeedBack/>
@@ -50,23 +51,19 @@ export default function Home() {
     </div>
   </div>
 
-  <div className="">
-          
-          </div>
-
-  <main class="d-flex col flex-wrap container mt-5">
+  <main class="d-flex col flex-wrap container mt-5" >
     {Comments.map((post) => (
-      <div class="col-6 " >
-      <div class="m-1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative align-items-center">
+      <div class="col-6">
+      <div class="m-1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative align-items-center " data-aos="zoom-in" data-aos-duration="700" data-aos-offset="300">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">{post.title}</strong>
           <h3 class="mb-0">{post.name}</h3>
           <div class="mb-1 text-muted">{date()}</div>
           <p class="card-text mb-auto" style={textStyle}>{post.review}</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+          <a href="/" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block ">
-          <img src={post.image} class="bd-placeholder-img rounded-start shadow" width="200" height="250"/>
+          <img src={post.image} class="bd-placeholder-img rounded-start shadow" width="200" height="250" alt=''/>
           {/* <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> */}
         </div>
       </div>

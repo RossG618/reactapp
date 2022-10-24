@@ -1,6 +1,4 @@
 import React from "react";
-import AdvertPopup from "./AdvertPopup";
-import { useEffect, useState } from "react";
 import "./about.css";
 import { AutoLoginModal } from "./Modal";
 import { HarleyD } from "./HarleyD-info";
@@ -45,8 +43,8 @@ const linkURL = "https://www.harley-davidson.com/gb/en/motorcycles";
             <h1 className="fw-light text-white">Make your choice</h1>
             <p className="lead text-white">Here at Harley-Davidson we create the ultimate combination of performance and style, the very life blood of motor engines we don't just build motorcycles, we are creating life through cold hard metal. </p>
             <div className="position-relative">
-              <a href="#" className="btn btn-primary mx-2 col">COLLECTION</a>
-              <a href="#" className="btn btn-outline-light mx-2 col" onClick={handleEnquery}>Make enquires</a>
+              <a href="/" className="btn btn-primary mx-2 col">COLLECTION</a>
+              <a href="/" className="btn btn-outline-light mx-2 col" onClick={handleEnquery}>Make enquires</a>
               <AutoLoginModal />
             </div>
           </div>
@@ -60,7 +58,7 @@ const linkURL = "https://www.harley-davidson.com/gb/en/motorcycles";
         {HarleyD.map(item => (
           <div className="col">
           <div className="card shadow-sm" id="card">
-            <img src={item.image}/>
+            <img src={item.image} alt=''/>
             <div className="card-body border-top">
               <h3>{item.title}</h3>
               <p className="card-text">
@@ -69,7 +67,7 @@ const linkURL = "https://www.harley-davidson.com/gb/en/motorcycles";
               <div className="d-flex justify-content-between align-items-center">
                 <div className="btn-group">
                   <button type="button" className="btn btn-sm btn-outline-secondary" onClick={handleExpansion}>View</button>
-                  <button type="button"  className="btn btn-sm btn-outline-secondary"><a style={linkStyles} target="_blank" href={`${linkURL}/nightster.html`}>Order</a></button>
+                  <button type="button"  className="btn btn-sm btn-outline-secondary"><a style={linkStyles} target="_blank" rel="noreferrer" href={`${linkURL}/nightster.html`}>Order</a></button>
                 </div>
                 <small className="text-muted">10 mins ago</small>
               </div>

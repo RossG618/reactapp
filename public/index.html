@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -17,7 +22,7 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="/index.css" />
-
+    <script src="bower_components/aos/dist/aos.js"></script>
 <link rel="JavaScript" href="cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -43,5 +48,13 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+    </script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal  } from "react-bootstrap";
 export default function FeedBack(){
 const [show, setShow] = useState(false);
 
@@ -8,7 +8,6 @@ useEffect(() => {
         setShow(() => true)
     }, 4000)
 }, [])
-const handleShow = () => setShow(true);
 const handleClose = () => setShow(false);
 
     return(

@@ -3,7 +3,6 @@ import { signUp } from "../features/session/sessionSlice"
 import { useDispatch } from "react-redux";
 // import useHistory
 import { useHistory } from "react-router-dom";
-import Cart from "./cart";
 export default function SignUp () {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

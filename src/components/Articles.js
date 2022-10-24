@@ -23,7 +23,7 @@ export default function Articles () {
     <main className='container'>
       <h1>Articles</h1>
       
-      <table className="table-striped table table-hover ">
+      <table id="table_id" className="table-striped table table-hover ">
         <tbody>
 
        

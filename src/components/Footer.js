@@ -17,10 +17,11 @@ history.goForward();
     
   }
 
+  
   return (
-    <div className="d-flex align-items-end ">
+    <div className="d-flex align-items-end " style={{ background: "#2c3e50"}}>
 
-    <footer className=' h-50 bg-dark align-items-center  w-100'>
+    <footer className='  align-items-center py-3 w-100' >
       <button className="rounded"  onClick={goBack}>Back</button>
       <div><Clock/></div>
       <button className="rounded" onClick={goForward}>Forward</button>

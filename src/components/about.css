@@ -1,24 +1,12 @@
-.card{
-    transition: all 0.7s ease-in-out;
-    transform: scale(1) translate(0%, 0%);
-    z-index: 20;
+*{
+    transition: all 0.5s;
 }
-.expand{
-    transition: all 1.2s ease-in-out;
-    transform: scale(1.5) translate(70%, 0);
-    z-index: 30;
+.moveUp:hover{
+    transform: translate(0px, -50px);
+    transition: all 0.5s ease-in-out;
 }
-.eForm-show{
-    transform:translate(0,0%) scale(0.7);
-    visibility: visible;
-    transition: transform 1s;
-    background: #fff;
-    position: absolute;
-    z-index: 33;
-}
-.eForm-hide{
-
-    transform:translate(50%,10%) scale(0.1);
-    visibility: hidden;
-    transition: transform 1s;
+.expandPic:hover{
+    transform: scale(1.4) translate(0, 30px);
+    transition: all 1s ease-in-out;
+   cursor: pointer;
 }

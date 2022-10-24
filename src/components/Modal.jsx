@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 
 export function AutoLoginModal(){
 const [show, setShow] = useState(false);
@@ -10,7 +10,7 @@ useEffect(() => {
         setShow(() => true)
     }, 4000)
 }, [])
-const handleShow = () => setShow(true);
+
 const handleClose = () => setShow(false);
     return(
         <div className='overlay'>

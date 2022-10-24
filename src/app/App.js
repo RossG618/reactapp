@@ -24,14 +24,13 @@ export const linkStyles = {
   "text-decoration": "none",
   "list-style": "none",
 }
-
+export const backgroundsty = {
+  backgroundImage: "url(https://static.vecteezy.com/system/resources/previews/007/164/537/original/fingerprint-identity-sensor-data-protection-system-podium-hologram-blue-light-and-concept-free-vector.jpg)"
+}
 function App() {
   return (
     <Router>
       <Header />
-     <div className=" d-flex justify-content-center">
-
-   
       <Switch>
         <Route path='/articles/:title'>
             <Article  />
@@ -86,7 +85,7 @@ function App() {
           </Route>
            
       </Switch>
-      </div>
+      
       <Footer />
     </Router>
   );

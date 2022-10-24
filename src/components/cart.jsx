@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { QuantityInput } from './Counters/counterButtons';
 import { products } from './Products';
 

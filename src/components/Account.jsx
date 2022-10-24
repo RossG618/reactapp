@@ -1,55 +1,104 @@
-import React from 'react'
-import { Array } from './aboutArray'
-import Login from './Login';
-import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../features/session/sessionSlice';
+import React, {useState} from 'react'
+// import { useSelector } from 'react-redux';
+// import { selectCurrentUser } from '../features/session/sessionSlice';
 import { Billing} from './personalInfo';
+import { Modal, Button } from 'react-bootstrap';
+
 
 export default function Account() {
-  const currentUser = useSelector(selectCurrentUser)
+  // const currentUser = useSelector(selectCurrentUser)
   const billingInfo = Billing[0];
   const shippingInfo = Billing[1];
+  const [show, setShow] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
+  const handlePasswordChange = e => {
+      // Getting the value and name of the input which triggered the change
+      const value = e.target.value.replace(/[^A-Za-z]/g, "*");
+      const name = e.target.name;
+  
+      // Updating the input's state
+      setPassword({
+        [name]: value
+      });
+    };
+  const handleUsernameChange = e => {
+      // Getting the value and name of the input which triggered the change
+      const value = e.target.value;
+      const name = e.target.name;
+  
+      // Updating the input's state
+      setUsername({
+        [name]: value
+      });
+    };
+
+
+const handleShow = () => setShow(true);
+const handleClose = () => setShow(false);
   console.log(shippingInfo)
   return (
     <div >
+        <Modal show={show} style={{transform: "translate(0%, 20%)"}}>
+        <Modal.Header closeButton onClick={handleClose}>
+            <Modal.Title>Update User and Password</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='d-flex'>
+          <div>
+            <label htmlFor="Username">User:</label>
+            <input type="text" name="username" id="Username" value={username} onChange={e => handleUsernameChange(e)}  placeholder="Username" required/>
+          </div>
+          <div>
+            <label htmlFor="Password">Pass:</label>
+            <input type="passowrd" name='password' id='Password' value={password} onChange={e => handlePasswordChange(e)}  placeholder="Password" required />
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="outline-primary" >Submit</Button>
+        </Modal.Footer>
+      </Modal>
         <h1>Account</h1>
         <main class="container">
 
 
   <div class="my-3 p-3 bg-body rounded shadow">
-    <h6 class="border-bottom pb-2 mb-0">Security info</h6>
+    <div className="d-flex border-bottom pb-2 mb-0 align-items-end">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-key bd-placeholder-img flex-shrink-0 me-2" viewBox="0 0 16 16">
+  <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+  <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>
+
+    <h6 class=" pb-2 mb-0">Security info</h6>
+    </div>
     <div class="d-flex text-muted pt-3">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person bg-info rounded bd-placeholder-img flex-shrink-0 me-2 " viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="rgb(13,110,253)" class="bi bi-person  bg-white rounded bd-placeholder-img flex-shrink-0 me-2 " viewBox="0 0 16 16">
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
 </svg>
       <p class="pb-3 mb-0 small lh-sm border-bottom">
         <strong class="d-block text-gray-dark">Username:</strong>
         
-        Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
+        {username}
       </p>
     </div>
-    <div class="d-flex text-muted pt-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pass bg-info rounded bd-placeholder-img flex-shrink-0 me-2 p-1" viewBox="0 0 16 16">
+    <div class="d-flex text-muted pt-3 border-bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="rgb(13,110,253)" class="bi bi-pass  bg-white rounded bd-placeholder-img flex-shrink-0 me-2 p-1" viewBox="0 0 16 16">
   <path d="M5.5 5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Z"/>
   <path d="M8 2a2 2 0 0 0 2-2h2.5A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0H6a2 2 0 0 0 2 2Zm0 1a3.001 3.001 0 0 1-2.83-2H3.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-1.67A3.001 3.001 0 0 1 8 3Z"/>
 </svg>
      
-      <p class="pb-3 mb-0 small lh-sm border-bottom">
+      <p class="pb-3 mb-0 small lh-sm">
         <strong class="d-block text-gray-dark">Password:</strong>
         Some more representative placeholder content, related to this other user. Another status update, perhaps.
       </p>
     </div>
-    <div class="d-flex text-muted pt-3">
-      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
-
-      <p class="pb-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">@username</strong>
-        This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-      </p>
+    <div class="d-flex text-muted pt-3 align-tems-center ">
+      <button className="px-3 py-1 mx-2 rounded text-center text-white bg-primary" onClick={handleShow}>Update</button>
+      <button className="px-3 py-1 mx-2 rounded text-center text-white bg-primary" onClick={2}>View</button>
+      
     </div>
     <small class="d-block text-end mt-3">
-      <a href="#">All updates</a>
+      <a href="/">All updates</a>
     </small>
   </div>
 
@@ -85,7 +134,7 @@ export default function Account() {
       <div class="pb-3 mb-0 small lh-sm  w-100">
         <div class="d-flex justify-content-between">
           <strong class="text-gray-dark">Full Name</strong>
-          <a href="#">Follow</a>
+          <a href="/">Follow</a>
         </div>
         <span class="d-block mt-3 h5 text-dark">{shippingInfo.country}</span>
       </div>
@@ -93,7 +142,13 @@ export default function Account() {
     
   </div>
   <div class="my-4 p-3 bg-body rounded shadow-sm">
-    <h6 class="border-bottom pb-2 mb-0">Billing info</h6>
+    <div className='d-flex border-bottom pb-2 mb-0 align-items-end' >
+
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-wallet  bd-placeholder-img flex-shrink-0 me-2 rounded" viewBox="0 0 16 16">
+  <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/>
+</svg>
+    <h6 class="pb-2 mb-0">Billing info</h6>
+    </div>
     <div class="d-flex text-muted pt-3">
 
       <div class="pb-3 mb-0 small lh-sm border-bottom w-100">

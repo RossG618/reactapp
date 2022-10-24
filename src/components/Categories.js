@@ -40,8 +40,8 @@ const styleCard = {
                 </div>
         
                 <div class="card-body">
-                  <a href="#" class="card-link"style={linkStyles}>Card link</a>
-                  <a href="#" class="card-link"style={linkStyles}>Another link</a>
+                  <a href="/" class="card-link"style={linkStyles}>Card link</a>
+                  <a href="/" class="card-link"style={linkStyles}>Another link</a>
                 </div>
             </div>
           <div class="card m-2" style={styleCard}>
@@ -52,8 +52,8 @@ const styleCard = {
                 </div>
         
                 <div class="card-body">
-                  <a href="#" class="card-link"style={linkStyles}>{TILES['Auth-Oauth'].link1}</a>
-                  <a href="#" class="card-link"style={linkStyles}>Another link</a>
+                  <a href="/" class="card-link"style={linkStyles}>{TILES['Auth-Oauth'].link1}</a>
+                  <a href="/" class="card-link"style={linkStyles}>Another link</a>
                 </div>
             </div>
           <div class="card m-2" style={styleCard}>
@@ -64,8 +64,8 @@ const styleCard = {
                 </div>
         
                 <div class="card-body">
-                  <a href="#" class="card-link" style={linkStyles}>Card link</a>
-                  <a href="#" class="card-link" style={linkStyles}>Another link</a>
+                  <a href="/" class="card-link" style={linkStyles}>Card link</a>
+                  <a href="/" class="card-link" style={linkStyles}>Another link</a>
                 </div>
             </div>
         </div>
