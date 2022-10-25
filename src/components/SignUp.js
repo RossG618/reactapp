@@ -23,10 +23,10 @@ const history = useHistory();
   }
 
   return (
-    <div >
-      <div className="d-flex justify-content-center mt-5 ">
+    <div  style={{ background: "#2c3"}} >
+      <div className="d-flex justify-content-center mt-5 " >
         
-            <section className="shadow p-3 rounded-2">
+            <section className="shadow p-3 rounded-2 bg-body">
               <h1>Sign Up</h1>
               <form onSubmit={handleSubmit}>
                 <label>

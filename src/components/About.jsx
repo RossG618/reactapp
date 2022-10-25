@@ -47,9 +47,9 @@ const titleStyles = {
             </Carousel>
           </div>
           <div className="container bg-light shadow">
-             <div className='row mb-4'>
+             <div className=' row mb-4 '>
             {arr1.map(item => (
-                <div className="col shadow m-3  rounded-1 border border-2 border-warning moveUp">
+                <div className="col-lg shadow m-3 bg-body rounded-1 border border-2 border-warning moveUp">
                     <div className=' d-flex flex-column justify-content-center ' >
 
         <img src={item.image} alt="" className=' rounded-circle align-self-center my-3 expandPic' width="120" height="120"/>

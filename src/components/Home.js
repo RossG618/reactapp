@@ -54,7 +54,8 @@ export default function Home() {
   <main class="d-flex col flex-wrap container mt-5" >
     {Comments.map((post) => (
       <div class="col-6">
-      <div class="m-1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative align-items-center " data-aos="zoom-in" data-aos-duration="700" data-aos-offset="300">
+      <div class="m-1 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative align-items-center" 
+      data-aos="zoom-in" data-aos-duration="700" >
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">{post.title}</strong>
           <h3 class="mb-0">{post.name}</h3>

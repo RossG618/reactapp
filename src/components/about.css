@@ -2,11 +2,12 @@
     transition: all 0.5s;
 }
 .moveUp:hover{
-    transform: translate(0px, -50px);
+    transform: translate(10px, -50px);
     transition: all 0.5s ease-in-out;
 }
 .expandPic:hover{
-    transform: scale(1.4) translate(0, 30px);
+    transform: scale(1.4) translate(10px, 30px);
     transition: all 1s ease-in-out;
    cursor: pointer;
 }
+

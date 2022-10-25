@@ -7,9 +7,9 @@ export function Clock(){
 useEffect(() => { 
   setInterval(() => {
     const dateObject = new Date();
-
+   
     const hour = dateObject.getHours();
-    const minute = dateObject.getMinutes();
+    const minute = dateObject.getUTCMinutes();
     
     
     const currentTime = `${hour} : ${minute}`;

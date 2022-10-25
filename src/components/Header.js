@@ -6,39 +6,52 @@ import { Dropdown } from "react-bootstrap";
 import { Clock } from './clock';
 import './header.css'
 import { products } from './Products'; 
+import { useHistory } from "react-router-dom";
 // Import the NavLink component.
 
 export default function Header () {
-  const [isShown, setIsShown] = useState(false);
+  // const [isShown, setIsShown] = useState(false);
   const [searchOn, setSearchOn] = useState(false);
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
+  const history = useHistory();
+
 
   const handleLogout = e => {
     dispatch(logOut())
+    history.push('/login')
   }
-const nameCall = () => {
-  setIsShown(!isShown);
-}
+// const nameCall = () => {
+//   setIsShown(!isShown);
+// }
 const searchCall = () => {
   setSearchOn(!searchOn);
 }
 const itemNum = () => {
     const itemCount = products.length;
   if (itemCount === 0){
-    return 'No';
+    return null;
   }else{
     return itemCount
   }
 }
+// const itemNum = () => {
+//     const itemCount = products.length;
+//   if (itemCount === 0){
+//     return 'No';
+//   }else{
+//     return itemCount
+//   }
+// }
 
 
 
   // Replace the 4 <a> tags with <NavLink> components
   return (
-    <div className="d-flex align-items-center justify-content-around bg-dark " style={{ background: "#2c3e50", padding: "0"}}>
-      <div><Clock/></div>
+    <div className="d-flex align-items-center justify-content-around bg-dark container-fluid" style={{ background: "#2c3e50", padding: "0"}}>
+     
       <div className="header  nav d-flex justify-content-center ">
+        
         <Dropdown className="d-flex flex-row align-items-center">
       <NavLink className='nav-link rounded text-white ' to="/" exact>Home</NavLink>
         <Dropdown.Toggle variant="secondary d-flex align-items-center py-2 rounded-pill" id="dropdown-basic">
@@ -102,17 +115,22 @@ const itemNum = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="mx-3" role="img" viewBox="0 0 24 24"  onClick={searchCall}><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
         
         </div>
-        <div className="d-flex align-items-center flex-column" >
+        <div className="d-flex align-items-center flex-column position-relative" >
           <NavLink to="/cart" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="white" class="bi bi-cart3" viewBox="0 0 16 16" onMouseEnter={nameCall} onMouseLeave={nameCall} >
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="white" class="bi bi-cart3" viewBox="0 0 16 16"  >
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 </svg>
           </NavLink>
-          {isShown && (
+         
+        <div className='text-center position-absolute px-2 text-drop  rounded-circle shadow text-white ' style={{background: "red"}}>
+        {itemNum()}
+        </div>
+      
+          {/* {isShown && (
         <div className='text-center position-absolute p-2 text-drop shadow text-white bg-secondary' >
          <strong className="h3">{itemNum()}</strong> <br/>items in cart
         </div>
-      )}
+      )} */}
         </div>
         </div>
         

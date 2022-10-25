@@ -3,7 +3,7 @@
 .text-drop{
     visibility: visible;
     transform: scale(1);
-    transform:translateY(40px);
+    transform:translateY(-8px ) translateX(10px);
     transition: all 0.5s ease-in-out;
     z-index: 23;
 }
