@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, logOut } from "../features/session/sessionSlice";
 import { NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
-import { Clock } from './clock';
 import './header.css'
 import { products } from './Products'; 
 import { useHistory } from "react-router-dom";
-
 // Import the NavLink component.
 
 export default function Header () {
