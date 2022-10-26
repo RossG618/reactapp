@@ -11,7 +11,7 @@ ReactDOM.render(
     <Auth0Provider
     domain="dev-ugs5ayii6o2obmch.us.auth0.com"
     clientId="pT1cI0TuJ1soJbulCa0DwtBKY4RJakqx"
-    redirectUri={window.location.origin}
+    redirectUri={"https://spartan-net.netlify.app/account"}
   >
 
       <App />

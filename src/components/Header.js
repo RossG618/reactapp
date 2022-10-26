@@ -7,6 +7,7 @@ import { Clock } from './clock';
 import './header.css'
 import { products } from './Products'; 
 import { useHistory } from "react-router-dom";
+
 // Import the NavLink component.
 
 export default function Header () {
@@ -48,7 +49,7 @@ const itemNum = () => {
 
   // Replace the 4 <a> tags with <NavLink> components
   return (
-    <div className="d-flex align-items-center justify-content-around bg-dark container-fluid" style={{ background: "#2c3e50", padding: "0"}}>
+    <div className="d-flex align-items-center justify-content-center bg-dark container-fluid" style={{ background: "#2c3e50", padding: "0"}}>
      
       <div className="header  nav d-flex justify-content-center ">
         
@@ -107,7 +108,7 @@ const itemNum = () => {
         <div className="d-flex">
         
         {searchOn && (
-        <input type='search' placeholder="Search" className="position-absolute shift-left shadow" />
+        <input type='search' placeholder="Search" className="shift-left shadow" data-aos="zoom-up" data-aos-duration="700"/>
       )}
         
         <div >

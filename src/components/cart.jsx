@@ -1,8 +1,10 @@
-import React from 'react';
+import { faGbp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, {useState} from 'react';
 // import { useState, useEffect } from 'react';
 import { QuantityInput } from './Counters/counterButtons';
 import { products } from './Products';
-
+import './cart.css'
 // const [productItems, setProductItems] = useState([])
 // const [totPrice, setTotPrice] = useState(0);
 //   const [counter, setCounter] = useState(0);
@@ -20,7 +22,20 @@ import { products } from './Products';
   const itemsCount = products.length;
   
 export default function Cart(){
-    
+const [reveal, setReveal] = useState(false)
+
+const itemsVis = () => {
+  setReveal(!reveal);
+}
+
+  const textStyle = {
+    maxWidth: '100%',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 1,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  };
     let cart = products.filter(
       (ele, ind) => ind === products.findIndex((elem) => elem.id === ele.id)
     );
@@ -33,7 +48,7 @@ export default function Cart(){
     const quantityPrice = totalPrice;
 
     return(
-        <div className='d-flex mt-3'>
+        <div className='d-flex mt-3 justify-content-around'>
            
             {/* <div className="col-md-5 col-lg-4 ">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -104,14 +119,27 @@ export default function Cart(){
         </div>
       ))}
       </div>
-     <div className='card overflow-hidden mx-3 h-25 justify-content-between '>
-      <h2 className='bg-warning px-1'>Cart: {itemsCount} items</h2>
-      
-      <div className='px-4'>
-      <h3>Total £{quantityPrice} </h3>
-      <h5 className='lead'>Total +Vat £{quantityPrice} </h5>
+      <div className='container'>
+      <div className='card overflow-hidden mx-3 shadow col-4 '>
+        <h2 className='text-light bg-info px-1'role='button' onClick={itemsVis}>Cart: {itemsCount} items</h2>
+        <div className={reveal ? "flex-column mb-3 p-1 text-center trans" : "collapse"}  id='collapsible' >
+          {products.map(item => (<div className="d-flex justify-content-between border-bottom border-primary px-1 mb-3">
+            <div className='text-start'>
+            <h4 className="m-0 text-capitalize" style={{"font-family": "copperplate gothic"}}>{item.name}</h4>
+            <p style={textStyle}>{item.desc}</p>
+            </div>
+            <h5 className="m-0 d-flex gap-1 align-items-base "><span>
+              <FontAwesomeIcon className="h4 text-primary"icon={faGbp}/>
+            </span>{item.price}</h5>
+          </div>
+          ))}
+        </div>
+        <div className='px-4 text-center mx-auto'>
+        <h3>Total £{quantityPrice} </h3>
+        <p className="border-bottom">Total +Vat £{quantityPrice} </p>
 
-      </div>
+        </div>
+        </div>
       </div>
         </div>
     )
