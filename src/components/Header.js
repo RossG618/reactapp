@@ -43,20 +43,22 @@ const itemNum = () => {
 //     return itemCount
 //   }
 // }
-
+const handleLogo = () => {
+  history.push('/')
+}
 
 
   // Replace the 4 <a> tags with <NavLink> components
   return (
     <div className="d-flex align-items-center justify-content-between bg-dark container-fluid border-bottom border-primary border-2" style={{ background: "#2c3e50", padding: "0"}}>
-     <img src="https://img.freepik.com/premium-vector/spartan-logo_225174-63.jpg?w=1060"  className="border-bottom border-2 border-primary" width="130" height="100" alt="" />
+     <img src="https://img.freepik.com/premium-vector/spartan-logo_225174-63.jpg?w=1060"  className="border-bottom border-2 border-primary" role="button" width="130" height="100" alt="" onClick={handleLogo}/>
       <div className="header  nav d-flex justify-content-center px-3" >
         
         <Dropdown className="d-flex flex-row align-items-center">
       <NavLink className='nav-link rounded ' style={{color: "#2c3"}} to="/" exact>Home</NavLink>
         <Dropdown.Toggle variant="secondary d-flex align-items-center py-2 rounded-pill" id="dropdown-basic">
         </Dropdown.Toggle>
-        <Dropdown.Menu>
+        <Dropdown.Menu className="py-0 overflow-hidden" id="transform">
           <Dropdown.Item href="#/action-1">
          <NavLink className='nav-link' to="/harley-davidson" exact>Harley-Davidson</NavLink>
       

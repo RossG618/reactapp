@@ -5,6 +5,9 @@ border-bottom: 2px solid goldenrod;
 .header > .nav-link:hover{
 border: 1px solid goldenrod;
 }
+#transform{
+    transform: translate3d(0, 45px, 0px)!important;
+}
 .text-drop{
     visibility: visible;
     transform: scale(1);
