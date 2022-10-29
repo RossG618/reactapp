@@ -1,5 +1,10 @@
 
-
+.header > .nav-link{
+border-bottom: 2px solid goldenrod;
+}
+.header > .nav-link:hover{
+border: 1px solid goldenrod;
+}
 .text-drop{
     visibility: visible;
     transform: scale(1);

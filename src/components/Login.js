@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 // import { selectCurrentUser } from "../features/session/sessionSlice";
 // import { useSelector } from "react-redux";
 import { logIn } from "../features/session/sessionSlice";
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
@@ -42,7 +42,7 @@ const passHide = () => {
       setError("Wrong Details");
     }
   }
-  const { loginWithRedirect } = useAuth0();
+  // const { loginWithRedirect } = useAuth0();
   
 
   return (
@@ -109,7 +109,8 @@ const passHide = () => {
               </span>
 
               </div>
-              <button type="submit" className="btn btn-primary btn-lg rounded mt-3" onClick={() => loginWithRedirect()}>
+              <button type="submit" className="btn btn-primary btn-lg rounded mt-3" >
+              {/* onClick={() => loginWithRedirect()} */}
                 Login
               </button>
               

@@ -4,18 +4,18 @@ import App from "./app/App";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
-import { Auth0Provider } from "@auth0/auth0-react";
+// import { Auth0Provider } from "@auth0/auth0-react";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <Auth0Provider
+    {/* <Auth0Provider
     domain="dev-ugs5ayii6o2obmch.us.auth0.com"
     clientId="pT1cI0TuJ1soJbulCa0DwtBKY4RJakqx"
     redirectUri={"https://spartan-net.netlify.app/account"}
-  >
+  > */}
 
       <App />
-  </Auth0Provider>
+  {/* </Auth0Provider> */}
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
