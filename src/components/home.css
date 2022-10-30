@@ -21,3 +21,6 @@
     0% {background-position: -200% bottom;}
     100% {background-position: 0% bottom;}
 }
+.collapse{
+    transition: all 0.7s;
+}
