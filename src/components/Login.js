@@ -10,6 +10,7 @@ import { logIn } from "../features/session/sessionSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import './login.css'
 //Function
 export default function Login() {
   // const [user, setUser] = useState({username: "", email:"", password: ""});
@@ -109,9 +110,9 @@ const passHide = () => {
               </span>
 
               </div>
-              <button type="submit" className="btn btn-primary btn-lg rounded mt-3" >
+              <button type="submit" className="btn btn-primary btn-lg rounded mt-3 login-btn" >
               {/* onClick={() => loginWithRedirect()} */}
-                Login
+                <span>Login</span>
               </button>
               
             </div>

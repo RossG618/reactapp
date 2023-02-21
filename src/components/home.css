@@ -21,6 +21,15 @@
     0% {background-position: -200% bottom;}
     100% {background-position: 0% bottom;}
 }
-.collapse{
-    transition: all 0.7s;
+.hov-expand{
+    z-index: 20;
+
+}
+.hov-expand:hover{
+    z-index: 24;
+transition: transform 0.5s;
+transform: translate(40px, 0px);
+}
+.hov-expand .border{
+border: red;
 }

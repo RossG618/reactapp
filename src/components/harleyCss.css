@@ -1,0 +1,20 @@
+.hovEffect:after{
+    content: "";
+    background: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 80%;
+    padding-left: 120%;
+    opacity: 0;
+    transition: all 0.8s;
+    border-radius: 2px;
+}
+.hovEffect:active:after{
+    
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}

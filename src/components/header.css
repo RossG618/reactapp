@@ -1,6 +1,6 @@
 
-.header > .nav-link{
-border-bottom: 2px solid goldenrod;
+.header > .nav-link:focus-within{
+border-bottom: 2px solid rgb(183, 139, 27) ;
 }
 .header > .nav-link:hover{
 border: 1px solid goldenrod;

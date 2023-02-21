@@ -9,6 +9,6 @@ export const store = configureStore({
     articles: articlesReducer,
     categories: categoriesReducer,
     session: sessionReducer,
-    authors: authorsReducer
+    authors: authorsReducer,
   },
 });

@@ -1,4 +1,4 @@
-export const Comments = [
+export const Posts = [
      {
         title: 'CHURCHILL',
         name: 'Winston Churchill',

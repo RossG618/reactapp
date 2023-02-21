@@ -72,7 +72,7 @@ const handleLogo = () => {
           </Dropdown.Item>
         </Dropdown.Menu>
         </Dropdown>
-          <NavLink className='nav-link nav-item text-white rounded' to="/about">About</NavLink>
+          <NavLink className='nav-link nav-item text-white rounded position-relative' to="/about">About</NavLink>
           <NavLink className='nav-link nav-item text-white rounded' to="/articles">Articles</NavLink>
           <NavLink className='nav-link nav-item text-white rounded' to="/categories">Categories</NavLink>
           <NavLink to="/colors-api" className='full-rotate text-white rounded'>

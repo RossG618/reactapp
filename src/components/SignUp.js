@@ -3,6 +3,8 @@ import { signUp } from "../features/session/sessionSlice"
 import { useDispatch } from "react-redux";
 // import useHistory
 import { useHistory } from "react-router-dom";
+import './signUp.css'
+//
 export default function SignUp () {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -35,17 +37,20 @@ const history = useHistory();
                     <input
                       id="username"
                       value={username}
+                      required
                       onChange={(e) => setUsername(e.currentTarget.value)}
                     />Password
                     <input
                       id="password"
                       value={password}
+                      required
                       onChange={(e) => setPassword(e.currentTarget.value)}
                     />
                     Email address
                     <input
                       id="email"
                       value={email}
+                      required
                       onChange={(e) => setEmail(e.currentTarget.value)}
                     />
         
@@ -53,21 +58,24 @@ const history = useHistory();
                     <input
                       id="firstname"
                       value={firstname}
+                      required
                       onChange={(e) => setFirstName(e.currentTarget.value)}
                     />
                     Last name
                     <input
                       id="lastname"
                       value={lastname}
+                      required
                       onChange={(e) => setLastName(e.currentTarget.value)}
                     />Address
                     <input
                       id="address"
                       value={address}
+                      required
                       onChange={(e) => setAddress(e.currentTarget.value)}
                     />
                     <button type="submit" className="btn btn-info mt-3">
-                      Sign Up
+                      <span>Sign Up</span>
                     </button>
                   </div>
                 </label>
